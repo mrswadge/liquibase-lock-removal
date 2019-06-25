@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Liquibase Lock Removal Tool</title>
+</h:head>
+<h:body bgcolor="white">
+	<h:form>
+		<h:messages style="color:red;margin:8px;" />
+		<br />
+		<h:panelGrid columns="1">
+			<h2>Liquibase Lock Removal Tool</h2>
+			<h:commandButton action="#{lockRemover.zero}" title="Push the button!" value="Set locked to zero">
+				<f:ajax execute="@this" render="output" />
+			</h:commandButton>
+			<h:commandButton action="#{lockRemover.delete}" title="Push it real good!" value="Delete lock row">
+				<f:ajax execute="@this" render="output" />
+			</h:commandButton>
+			<h:outputText id="output" value="#{lockRemover.message}" />
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
